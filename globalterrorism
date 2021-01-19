@@ -1,0 +1,22 @@
+#We are going analysis various parameters of global terrorism.
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+#reading the given dataset
+df = pd.read_csv("globalterrorism1.csv")
+df.head(20)
+
+# Setting the figure size
+plt.figure(figsize=(30, 10))
+
+# countplot: Show the counts of observations in each categorical bin using bars
+sns.countplot(x='iyear', data=df)
+
+# Display the figure
+plt.show()
+df.isna().sum()
+# Grouping products by sales
+country_total = pd.DataFrame(df.groupby('country_txt'))
+country_total
+#for checking most cases in which country
+df['country_txt'].value_counts()
